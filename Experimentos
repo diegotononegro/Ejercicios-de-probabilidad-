@@ -1,0 +1,190 @@
+{
+  "nbformat": 4,
+  "nbformat_minor": 0,
+  "metadata": {
+    "colab": {
+      "provenance": [],
+      "authorship_tag": "ABX9TyNEDLLGmlo64KIZrsmKoRfI",
+      "include_colab_link": true
+    },
+    "kernelspec": {
+      "name": "python3",
+      "display_name": "Python 3"
+    },
+    "language_info": {
+      "name": "python"
+    }
+  },
+  "cells": [
+    {
+      "cell_type": "markdown",
+      "metadata": {
+        "id": "view-in-github",
+        "colab_type": "text"
+      },
+      "source": [
+        "<a href=\"https://colab.research.google.com/github/diegotononegro/Ejercicios-de-probabilidad-/blob/main/Experimentos\" target=\"_parent\"><img src=\"https://colab.research.google.com/assets/colab-badge.svg\" alt=\"Open In Colab\"/></a>"
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "#Experimentos\n"
+      ],
+      "metadata": {
+        "id": "0JAzfzWFLBBI"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "##Experimento determinista"
+      ],
+      "metadata": {
+        "id": "7pz_OLieLK0_"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Un experimento determinista es aquel que produce siempre el mismo resultado cuando se repite bajo las mimas condiciones iniciales"
+      ],
+      "metadata": {
+        "id": "5ASnGv2JLTo-"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Ejemplo de el área de un circulo"
+      ],
+      "metadata": {
+        "id": "B6bh1DS6LW12"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "Por ejemplo, en matemáticas, si evaluamos la operación 2+3, el resultado siempre será 5. De manera similar, si calculamos el área de un círculo usando la fórmula\n",
+        "\n",
+        "$A = π ⋅ r^2$\n",
+        "\n",
+        "y el radio\n",
+        "$r$ permanece constante, el resultado del cálculo será siempre el mismo."
+      ],
+      "metadata": {
+        "id": "V15yCqKyL9M2"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import sympy\n",
+        "\n",
+        "def area(radio):\n",
+        "    return sympy.pi * (radio ** 2)"
+      ],
+      "metadata": {
+        "id": "suBNN_jYNWOW"
+      },
+      "execution_count": 5,
+      "outputs": []
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "area (5)"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 38
+        },
+        "id": "8hYVbo4UN_u2",
+        "outputId": "dd8ed1bb-6eaf-40d8-f2cb-836699eaea95"
+      },
+      "execution_count": 7,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "25*pi"
+            ],
+            "text/latex": "$\\displaystyle 25 \\pi$"
+          },
+          "metadata": {},
+          "execution_count": 7
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "##Experimento aleatorio"
+      ],
+      "metadata": {
+        "id": "lMh4E7FHNQPu"
+      }
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "En contraste, un experimento aleatorio es aquel que, aún cuando se repita bajo las mismas condiciones, no produce siempre el mismo resultado y no es posible predecir con certeza cuál ocurrirá.\n",
+        "\n",
+        "Por ejemplo, al lanzar una moneda al aire no podemos saber con seguridad si el resultado será cara o cruz antes de observarlo."
+      ],
+      "metadata": {
+        "id": "bkL4oUJINinW"
+      }
+    },
+    {
+      "cell_type": "code",
+      "source": [
+        "import random\n",
+        "\n",
+        "moneda_lados = [\"aguila\", \"sol\"]\n",
+        "\n",
+        "def lanzar_moneda():\n",
+        "    return random.choice(moneda_lados)\n",
+        "\n",
+        "lanzar_moneda()"
+      ],
+      "metadata": {
+        "colab": {
+          "base_uri": "https://localhost:8080/",
+          "height": 35
+        },
+        "id": "7ledFfFDNpdm",
+        "outputId": "73c5127b-84d8-4997-f699-7c6c2903be16"
+      },
+      "execution_count": 4,
+      "outputs": [
+        {
+          "output_type": "execute_result",
+          "data": {
+            "text/plain": [
+              "'sol'"
+            ],
+            "application/vnd.google.colaboratory.intrinsic+json": {
+              "type": "string"
+            }
+          },
+          "metadata": {},
+          "execution_count": 4
+        }
+      ]
+    },
+    {
+      "cell_type": "markdown",
+      "source": [
+        "En un sorteo de lotería no es posible predecir con certeza cuál será el número ganador.\n",
+        "\n",
+        "Aunque no podemos determinar con exactitud el resultado de un experimento aleatorio individual, sí podemos describir matemáticamente su comportamiento mediante probabilidades."
+      ],
+      "metadata": {
+        "id": "vDMqTDunNruf"
+      }
+    }
+  ]
+}
